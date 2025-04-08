@@ -1,0 +1,10 @@
+void loop() {
+  if (Serial.available() > 0) {
+    int receivedData = Serial.read(); // Leer un byte de datos del buffer
+    Serial.print("Received: ");
+    Serial.println(receivedData); // Imprimir el dato recibido como un número decimal
+
+    if (receivedData == 'U') {
+      NinjaRollForward();
+    } else if (receivedData == 'D') {
+      NinjaRollbForward();
